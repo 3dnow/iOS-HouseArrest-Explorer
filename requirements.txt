@@ -1,0 +1,9 @@
+# This GUI uses the *synchronous* pymobiledevice3 API
+# (create_using_usbmux / HouseArrestService.send_command / afc.pull / listdir / stat ...).
+#
+# pymobiledevice3 8.0.0+ migrated these services to an async/await API, which this
+# code does NOT support — installing 8.x/9.x makes the app fail (silent no-op downloads,
+# coroutine-never-awaited). The last synchronous release is 7.8.3, so we pin to the 7.x line.
+#
+# Requires Python 3.9+ (constraint of pymobiledevice3 7.x).
+pymobiledevice3>=7,<8
